@@ -13,7 +13,7 @@ async function lyrics(client, interaction) {
             const errorEmbed = new EmbedBuilder()
                 .setColor('#ff0000')
                 .setTitle('Error')
-                .setDescription('❌ No active player found.');
+                .setDescription('❌ Aktif oyuncu bulunamadı.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
             return;
@@ -83,7 +83,7 @@ async function lyrics(client, interaction) {
         }
 
         if (!lyricSong) {
-            lyricEmbed.setDescription(`❌ No lyrics were found!`);
+            lyricEmbed.setDescription(`❌ Hiçbir şarkı sözü bulunamadı!`);
             return interaction.editReply({ embeds: [lyricEmbed], ephemeral: true });
         }
 
@@ -96,7 +96,7 @@ async function lyrics(client, interaction) {
                 .setDescription(lyricsArray[page])
                 .setColor(config.embedColor)
                 .setThumbnail(lyricThumbnail)
-                .setFooter({ text: `Page ${page + 1} of ${lyricsArray.length} | Requested by ${interaction.user.tag}` })
+                .setFooter({ text: `Sayfa ${page + 1} ve ${lyricsArray.length} | Tarafından talep edildi ${interaction.user.tag}` })
                 .setTimestamp();
         };
 
@@ -105,13 +105,13 @@ async function lyrics(client, interaction) {
                 .addComponents(
                     new ButtonBuilder()
                         .setCustomId('prev')
-                        .setLabel('Previous')
+                        .setLabel('Önceki')
                         .setStyle(ButtonStyle.Secondary)
                         .setEmoji("◀️")
                         .setDisabled(currentPage === 0),
                     new ButtonBuilder()
                         .setCustomId('next')
-                        .setLabel('Next')
+                        .setLabel('Sonraki')
                         .setStyle(ButtonStyle.Secondary)
                         .setEmoji("▶️")
                         .setDisabled(currentPage === totalPages - 1)
@@ -143,13 +143,13 @@ async function lyrics(client, interaction) {
             await message.edit({ components: [createActionRow(currentPage, lyricsArray.length).setComponents(
                 new ButtonBuilder()
                     .setCustomId('prev')
-                    .setLabel('Previous')
+                    .setLabel('Önceki')
                     .setStyle(ButtonStyle.Secondary)
                     .setEmoji("◀️")
                     .setDisabled(true),
                 new ButtonBuilder()
                     .setCustomId('next')
-                    .setLabel('Next')
+                    .setLabel('Sonraki')
                     .setStyle(ButtonStyle.Secondary)
                     .setEmoji("▶️")
                     .setDisabled(true)
@@ -158,17 +158,17 @@ async function lyrics(client, interaction) {
 
     } catch (error) {
         console.error('Error fetching lyrics:', error);
-        await interaction.editReply({ content: 'An error occurred while fetching the lyrics.', ephemeral: true });
+        await interaction.editReply({ content: 'Şarkı sözleri getirilirken bir hata oluştu.', ephemeral: true });
     }
 }
 
 module.exports = {
     name: "lyrics",
-    description: "Displays the lyrics of the current song",
+    description: "Geçerli şarkının sözlerini görüntüler.",
     permissions: "0x0000000000000800",
     options: [{
         name: 'search',
-        description: 'Search query for lyrics',
+        description: 'İstediğiniz şarkının sözlerini arar.',
         type: ApplicationCommandOptionType.String,
         required: false
     }],

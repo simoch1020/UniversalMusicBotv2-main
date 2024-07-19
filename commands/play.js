@@ -1,23 +1,3 @@
-/*
-
-  ________.__                        _____.___.___________
- /  _____/|  | _____    ____  ____   \__  |   |\__    ___/
-/   \  ___|  | \__  \ _/ ___\/ __ \   /   |   |  |    |   
-\    \_\  \  |__/ __ \\  \__\  ___/   \____   |  |    |   
- \______  /____(____  /\___  >___  >  / ______|  |____|   
-        \/          \/     \/    \/   \/                  
-
-╔════════════════════════════════════════════════════════════════════════╗
-║                                                                        ║
-║  ## Created by GlaceYT!                                                ║
-║  ## Feel free to utilize any portion of the code                       ║
-║  ## DISCORD :  https://discord.com/invite/xQF9f9yUEM                   ║
-║  ## YouTube : https://www.youtube.com/@GlaceYt                         ║
-║                                                                        ║
-╚════════════════════════════════════════════════════════════════════════╝
-
-
-*/
 const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const config = require("../config.js");
 
@@ -31,8 +11,8 @@ async function play(client, interaction) {
         if (!interaction.member.voice.channelId) {
             const embed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Voice Channel Required')
-                .setDescription('❌ You need to be in a voice channel to use this command.');
+                .setTitle('Ses Kanalı Gerekli')
+                .setDescription('❌ Bu komutu kullanmak için bir ses kanalında olmanız gerekir.');
 
             await interaction.reply({ embeds: [embed], ephemeral: true });
             return;
@@ -83,8 +63,8 @@ async function play(client, interaction) {
         } else {
             const errorEmbed = new EmbedBuilder()
                 .setColor(config.embedColor)
-                .setTitle('Error')
-                .setDescription('❌ No results found.');
+                .setTitle('Hata')
+                .setDescription('❌ Sonuç bulunamadı.');
 
             await interaction.editReply({ embeds: [errorEmbed] });
             return;
@@ -96,32 +76,32 @@ async function play(client, interaction) {
             new EmbedBuilder()
                 .setColor(config.embedColor)
                 .setAuthor({
-                    name: 'Request Update',
+                    name: 'Güncelleme Talebi',
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
-                 .setFooter({ text: '🎶 Enjoy your music!'}),
+                .setDescription('**➡️ Talebiniz başarıyla işleme alınmıştır.**\n**➡️ Lütfen oynatmayı kontrol etmek için düğmeleri kullanın.**')
+                 .setFooter({ text: '🎶 Müziğinizin keyfini çıkarın!'}),
 
             new EmbedBuilder()
                 .setColor(config.embedColor)
                 .setAuthor({
-                    name: 'Request Update',
+                    name: 'Güncelleme Talebi',
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
-                 .setFooter({ text: '🎶 Enjoy your music!'}),
+                .setDescription('**➡️ Talebiniz başarıyla işleme alınmıştır.**\n**➡️ Lütfen oynatmayı kontrol etmek için düğmeleri kullanın.**')
+                 .setFooter({ text: '🎶 Müziğinizin keyfini çıkarın!'}),
 
             new EmbedBuilder()
                 .setColor(config.embedColor)
                 .setAuthor({
-                    name: 'Request Update',
+                    name: 'Güncelleme Talebi',
                     iconURL: config.CheckmarkIcon,
                     url: config.SupportServer
                 })
-                .setDescription('**➡️ Your request has been successfully processed.**\n**➡️ Please use buttons to control playback**')
-                .setFooter({ text: '🎶 Enjoy your music!'})
+                .setDescription('**➡️ Talebiniz başarıyla işleme alınmıştır.**\n**➡️ Lütfen oynatmayı kontrol etmek için düğmeleri kullanın.**')
+                .setFooter({ text: '🎶 Müziğinizin keyfini çıkarın!'})
         ];
 
         const randomIndex = Math.floor(Math.random() * embeds.length);
@@ -131,8 +111,8 @@ async function play(client, interaction) {
         console.error('Error processing play command:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
-            .setTitle('Error')
-            .setDescription('❌ An error occurred while processing your request.');
+            .setTitle('Hata')
+            .setDescription('❌ İsteğiniz işlenirken bir hata oluştu.');
 
         await interaction.editReply({ embeds: [errorEmbed] });
     }
@@ -140,11 +120,11 @@ async function play(client, interaction) {
 
 module.exports = {
     name: "play",
-    description: "Play a song from a name or link",
+    description: "Bir addan veya bağlantıdan şarkı çalar.",
     permissions: "0x0000000000000800",
     options: [{
         name: 'name',
-        description: 'Enter song name / link or playlist',
+        description: 'Şarkı adını / bağlantısını veya çalma listesini girin.',
         type: ApplicationCommandOptionType.String,
         required: true
     }],
@@ -152,26 +132,3 @@ module.exports = {
     queueNames: queueNames,
     requesters: requesters 
 };
-
-
-
-/*
-
-  ________.__                        _____.___.___________
- /  _____/|  | _____    ____  ____   \__  |   |\__    ___/
-/   \  ___|  | \__  \ _/ ___\/ __ \   /   |   |  |    |   
-\    \_\  \  |__/ __ \\  \__\  ___/   \____   |  |    |   
- \______  /____(____  /\___  >___  >  / ______|  |____|   
-        \/          \/     \/    \/   \/                  
-
-╔════════════════════════════════════════════════════════════════════════╗
-║                                                                        ║
-║  ## Created by GlaceYT!                                                ║
-║  ## Feel free to utilize any portion of the code                       ║
-║  ## DISCORD :  https://discord.com/invite/xQF9f9yUEM                   ║
-║  ## YouTube : https://www.youtube.com/@GlaceYt                         ║
-║                                                                        ║
-╚════════════════════════════════════════════════════════════════════════╝
-
-
-*/

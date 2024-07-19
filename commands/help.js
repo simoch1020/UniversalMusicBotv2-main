@@ -1,30 +1,9 @@
-/*
-
-  ________.__                        _____.___.___________
- /  _____/|  | _____    ____  ____   \__  |   |\__    ___/
-/   \  ___|  | \__  \ _/ ___\/ __ \   /   |   |  |    |   
-\    \_\  \  |__/ __ \\  \__\  ___/   \____   |  |    |   
- \______  /____(____  /\___  >___  >  / ______|  |____|   
-        \/          \/     \/    \/   \/                  
-
-╔════════════════════════════════════════════════════════════════════════╗
-║                                                                        ║
-║  ## Created by GlaceYT!                                                ║
-║  ## Feel free to utilize any portion of the code                       ║
-║  ## DISCORD :  https://discord.com/invite/xQF9f9yUEM                   ║
-║  ## YouTube : https://www.youtube.com/@GlaceYt                         ║
-║                                                                        ║
-╚════════════════════════════════════════════════════════════════════════╝
-
-
-*/
-
 const { EmbedBuilder } = require('discord.js');
 const config = require("../config.js");
 
 module.exports = {
   name: "help",
-  description: "Get information about the bot",
+  description: "Bot hakkında bilgi alın",
   permissions: "0x0000000000000800",
   options: [],
   run: async (client, interaction) => {
@@ -33,21 +12,21 @@ module.exports = {
 
       const helpDescription = `
 \`\`\`css
-Welcome to ${botName}!
+Hoşgeldin ${botName}!
 
-Your ultimate music companion on Discord. Here are the available commands:
+Discord'daki nihai müzik arkadaşınız. İşte mevcut komutlar:
 
-[ /play    ] - Start playing the songs.
-[ /pause   ] - Pause the current song.
-[ /resume  ] - Resume the current song.
-[ /lyrics  ] - Displays the lyrics of a song.
-[ /skip    ] - Skip the current song.
-[ /stop    ] - Destroys the music player.
-[ /np      ] - Shows now playing song.
-[ /volume  ] - Sets the volume of the player.
-[ /ping    ] - Check bot latency.
-[ /support ] - Shows support server info.
-[ /help    ] - Display this help menu.
+[ /play    ] - Şarkıları çalmaya başlayın.
+[ /pause   ] - Geçerli şarkıyı duraklatır.
+[ /resume  ] - Geçerli şarkıyı sürdürür.
+[ /lyrics  ] - Bir şarkının sözlerini görüntüler.
+[ /skip    ] - Geçerli şarkıyı atlar.
+[ /stop    ] - Müzik çaları yok eder.
+[ /np      ] - Şu anda çalan şarkıyı gösterir.
+[ /volume  ] - Oynatıcının ses seviyesini ayarlar.
+[ /ping    ] - Bot gecikmesini gösterir.
+[ /support ] - Destek sunucusu bilgilerini gösterir.
+[ /help    ] - Bu yardım menüsünü görüntüler.
 \`\`\`
       `;
 
@@ -56,7 +35,7 @@ Your ultimate music companion on Discord. Here are the available commands:
         .setTitle(`${botName} Help`)
         .setThumbnail(client.user.displayAvatarURL()) 
         .setDescription(helpDescription)
-        .setFooter({ text: `Prime Music v1.0`, iconURL: client.user.displayAvatarURL() }) 
+        .setFooter({ text: `UniversalBot Music v1.0`, iconURL: client.user.displayAvatarURL() }) 
       
 
       return interaction.reply({ embeds: [embed] });
@@ -65,25 +44,3 @@ Your ultimate music companion on Discord. Here are the available commands:
     }
   },
 };
-
-
-/*
-
-  ________.__                        _____.___.___________
- /  _____/|  | _____    ____  ____   \__  |   |\__    ___/
-/   \  ___|  | \__  \ _/ ___\/ __ \   /   |   |  |    |   
-\    \_\  \  |__/ __ \\  \__\  ___/   \____   |  |    |   
- \______  /____(____  /\___  >___  >  / ______|  |____|   
-        \/          \/     \/    \/   \/                  
-
-╔════════════════════════════════════════════════════════════════════════╗
-║                                                                        ║
-║  ## Created by GlaceYT!                                                ║
-║  ## Feel free to utilize any portion of the code                       ║
-║  ## DISCORD :  https://discord.com/invite/xQF9f9yUEM                   ║
-║  ## YouTube : https://www.youtube.com/@GlaceYt                         ║
-║                                                                        ║
-╚════════════════════════════════════════════════════════════════════════╝
-
-
-*/

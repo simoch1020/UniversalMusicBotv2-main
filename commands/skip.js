@@ -8,8 +8,8 @@ async function skip(client, interaction) {
         if (!player) {
             const errorEmbed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Error')
-                .setDescription('❌ No active player found.');
+                .setTitle('Hata')
+                .setDescription('❌ Aktif oyuncu bulunamadı.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
             return;
@@ -19,7 +19,7 @@ async function skip(client, interaction) {
 
         const embed = new EmbedBuilder()
             .setColor(config.embedColor)
-            .setDescription('**⏭️ Player will play the next song!**');
+            .setDescription('**⏭️ Oyuncu bir sonraki şarkıyı çalacak!**');
 
         await interaction.reply({ embeds: [embed] });
 
@@ -27,8 +27,8 @@ async function skip(client, interaction) {
         console.error('Error processing skip command:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
-            .setTitle('Error')
-            .setDescription('❌ An error occurred while processing your request.');
+            .setTitle('Hata')
+            .setDescription('❌ İsteğiniz işlenirken bir hata oluştu.');
 
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
     }
@@ -36,7 +36,7 @@ async function skip(client, interaction) {
 
 module.exports = {
     name: "skip",
-    description: "Skip the current song",
+    description: "Geçerli şarkıyı atlar.",
     permissions: "0x0000000000000800",
     options: [],
     run: skip

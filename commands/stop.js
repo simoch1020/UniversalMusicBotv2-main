@@ -8,8 +8,8 @@ async function stop(client, interaction) {
         if (!player) {
             const errorEmbed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Error')
-                .setDescription('❌ No active player found.');
+                .setTitle('Hata')
+                .setDescription('❌ Aktif oyuncu bulunamadı.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
             return;
@@ -20,7 +20,7 @@ async function stop(client, interaction) {
 
         const embed = new EmbedBuilder()
             .setColor(config.embedColor)
-            .setDescription('**⏹️ Playback has been stopped and player destroyed!**');
+            .setDescription('**⏹️ Oynatma durduruldu ve oynatıcı yok edildi!**');
 
         await interaction.reply({ embeds: [embed] });
 
@@ -28,8 +28,8 @@ async function stop(client, interaction) {
         console.error('Error processing stop command:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
-            .setTitle('Error')
-            .setDescription('❌ An error occurred while processing your request.');
+            .setTitle('Hata')
+            .setDescription('❌ Aktif oyuncu bulunamadı. ');
 
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
     }
@@ -37,7 +37,7 @@ async function stop(client, interaction) {
 
 module.exports = {
     name: "stop",
-    description: "Stop the current song and destroy the player",
+    description: "Geçerli şarkıyı durdurun ve oynatıcıyı yok edin.",
     permissions: "0x0000000000000800",
     options: [],
     run: stop
