@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "Berk",
+  "author": "GlaceYT",
   "license": "XX",
   "engines": {
     "node": "20.x"
