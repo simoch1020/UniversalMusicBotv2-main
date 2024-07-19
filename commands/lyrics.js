@@ -12,7 +12,7 @@ async function lyrics(client, interaction) {
         if (!player) {
             const errorEmbed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Error')
+                .setTitle('Hata')
                 .setDescription('❌ Aktif oyuncu bulunamadı.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
@@ -78,7 +78,7 @@ async function lyrics(client, interaction) {
                     });
             }
         } catch (err) {
-            lyricEmbed.setDescription(`❌ No lyrics were found!`);
+            lyricEmbed.setDescription(`❌ Hiçbir şarkı sözü bulunamadı!`);
             return interaction.editReply({ embeds: [lyricEmbed], ephemeral: true });
         }
 
@@ -92,7 +92,7 @@ async function lyrics(client, interaction) {
 
         const generateEmbed = (page) => {
             return new EmbedBuilder()
-                .setTitle(`${lyricTitle} by ${lyricAuthor} Lyrics`)
+                .setTitle(`${lyricTitle} by ${lyricAuthor} Şarkı Sözü`)
                 .setDescription(lyricsArray[page])
                 .setColor(config.embedColor)
                 .setThumbnail(lyricThumbnail)
@@ -157,17 +157,17 @@ async function lyrics(client, interaction) {
         });
 
     } catch (error) {
-        console.error('Error fetching lyrics:', error);
+        console.error('Şarkı sözleri getirilirken hata oluştu:', error);
         await interaction.editReply({ content: 'Şarkı sözleri getirilirken bir hata oluştu.', ephemeral: true });
     }
 }
 
 module.exports = {
-    name: "lyrics",
+    name: "Şarkı Sözü",
     description: "Geçerli şarkının sözlerini görüntüler.",
     permissions: "0x0000000000000800",
     options: [{
-        name: 'search',
+        name: 'Ara',
         description: 'İstediğiniz şarkının sözlerini arar.',
         type: ApplicationCommandOptionType.String,
         required: false

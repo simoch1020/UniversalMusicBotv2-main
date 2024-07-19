@@ -24,7 +24,7 @@ async function resume(client, interaction) {
         await interaction.reply({ embeds: [embed] });
 
     } catch (error) {
-        console.error('Error processing resume command:', error);
+        console.error('Devam komutu işlenirken hata oluştu:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Hata')
@@ -35,7 +35,7 @@ async function resume(client, interaction) {
 }
 
 module.exports = {
-    name: "resume",
+    name: "Sürdür",
     description: "Geçerli şarkıyı sürdürür.",
     permissions: "0x0000000000000800",
     options: [],

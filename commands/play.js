@@ -37,7 +37,7 @@ async function play(client, interaction) {
         const { loadType, tracks, playlistInfo } = resolve;
 
         if (!Array.isArray(tracks)) {
-            console.error('Expected tracks to be an array:', tracks);
+            console.error('Parçaların bir dizi olması bekleniyor:', tracks);
             throw new TypeError('Expected tracks to be an array');
         }
 
@@ -108,7 +108,7 @@ async function play(client, interaction) {
         await interaction.followUp({ embeds: [embeds[randomIndex]] });
 
     } catch (error) {
-        console.error('Error processing play command:', error);
+        console.error('Oynat komutu işlenirken hata oluştu:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Hata')
@@ -119,7 +119,7 @@ async function play(client, interaction) {
 }
 
 module.exports = {
-    name: "play",
+    name: "Oynat",
     description: "Bir addan veya bağlantıdan şarkı çalar.",
     permissions: "0x0000000000000800",
     options: [{

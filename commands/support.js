@@ -1,7 +1,7 @@
 const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
-  name: "support",
+  name: "Destek",
   description: "Destek sunucusu bağlantısını alın.",
   permissions: "0x0000000000000800",
   options: [],

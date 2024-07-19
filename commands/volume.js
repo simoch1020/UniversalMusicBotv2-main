@@ -28,17 +28,17 @@ async function volume(client, interaction) {
 
         return interaction.reply({ embeds: [embed] });
     } catch (error) {
-        console.error('Error setting volume:', error);
+        console.error('Ses seviyesi ayarlanırken hata oluştu:', error);
         await interaction.reply({ content: 'Birim ayarlanırken bir hata oluştu.', ephemeral: true });
     }
 }
 
 module.exports = {
-    name: "volume",
+    name: "Ses",
     description: "Geçerli şarkının ses seviyesini ayarlar",
     permissions: "0x0000000000000800",
     options: [{
-        name: 'level',
+        name: 'Seviye',
         description: 'Ses seviyesi (0-100)',
         type: ApplicationCommandOptionType.Integer,
         required: true

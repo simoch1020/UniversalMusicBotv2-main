@@ -21,7 +21,7 @@ async function nowPlaying(client, interaction) {
         if (!player) {
             const errorEmbed = new EmbedBuilder()
                 .setColor('#ff0000')
-                .setTitle('Error')
+                .setTitle('Hata')
                 .setDescription('❌ Şu anda çalan bir şarkı yok.');
 
             await interaction.reply({ embeds: [errorEmbed], ephemeral: true });
@@ -40,10 +40,10 @@ async function nowPlaying(client, interaction) {
         await interaction.reply({ embeds: [npEmbed] });
 
     } catch (error) {
-        console.error('Error processing now playing command:', error);
+        console.error('Şu anda oynatılıyor komutu işlenirken hata oluştu:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
-            .setTitle('Error')
+            .setTitle('Hata')
             .setDescription('❌ İsteğiniz işlenirken bir hata oluştu.');
 
         await interaction.reply({ embeds: [errorEmbed], ephemeral: true });

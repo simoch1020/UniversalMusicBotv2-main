@@ -24,7 +24,7 @@ async function skip(client, interaction) {
         await interaction.reply({ embeds: [embed] });
 
     } catch (error) {
-        console.error('Error processing skip command:', error);
+        console.error('Atlama komutu işlenirken hata oluştu:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Hata')
@@ -35,7 +35,7 @@ async function skip(client, interaction) {
 }
 
 module.exports = {
-    name: "skip",
+    name: "Atla",
     description: "Geçerli şarkıyı atlar.",
     permissions: "0x0000000000000800",
     options: [],

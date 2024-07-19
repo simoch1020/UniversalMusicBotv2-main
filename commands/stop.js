@@ -25,7 +25,7 @@ async function stop(client, interaction) {
         await interaction.reply({ embeds: [embed] });
 
     } catch (error) {
-        console.error('Error processing stop command:', error);
+        console.error('Durdurma komutu işlenirken hata oluştu:', error);
         const errorEmbed = new EmbedBuilder()
             .setColor('#ff0000')
             .setTitle('Hata')
@@ -36,7 +36,7 @@ async function stop(client, interaction) {
 }
 
 module.exports = {
-    name: "stop",
+    name: "Durdur",
     description: "Geçerli şarkıyı durdurun ve oynatıcıyı yok edin.",
     permissions: "0x0000000000000800",
     options: [],
