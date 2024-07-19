@@ -17,14 +17,12 @@ module.exports = {
 
   nodes: [
     {
-        name: "Node #1",
-        host: "lavalink.oryzen.xyz",
-        port: 80,
-        password: "oryzen.xyz", 
-        reconnectTimeout: 5000,
-        reconnectTries: Infinity,
-        secure: false
       
+        host: "lavalink.oryzen.xyz",
+        port: 80, 
+        password: "oryzen.xyz", 
+         secure: false
+    
     },
  ]
 }
