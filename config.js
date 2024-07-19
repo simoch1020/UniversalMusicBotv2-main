@@ -17,12 +17,13 @@ module.exports = {
 
   nodes: [
     {
-      
-        host: "lavalink.oryzen.xyz",
-        port: 80, 
-        password: "oryzen.xyz", 
-         secure: false
-    
+        name: "Node #1",
+        host: "lava-v3.ajieblogs.eu.org",
+        port: 80,
+        password: "https://dsc.gg/ajidevserver",
+        reconnectTimeout: 5000,
+        reconnectTries: Infinity,
+        secure: false
     },
  ]
 }
